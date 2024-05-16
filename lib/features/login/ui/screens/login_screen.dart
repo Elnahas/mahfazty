@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mahfazty/core/helpers/spacing.dart';
 import 'package:mahfazty/core/theming/app_colors.dart';
 import 'package:mahfazty/core/theming/fonts.dart';
-import 'package:mahfazty/core/widgets/my_text_from_field.dart';
+import 'package:mahfazty/features/login/ui/widgets/build_bloc_listener.dart';
+import 'package:mahfazty/features/login/ui/widgets/email_password.dart';
 import '../../../../core/widgets/my_button.dart';
+import '../../logic/cubit/login_cubit.dart';
 import '../widgets/dont_have_an_account.dart';
 import '../widgets/terms_and_continuing.dart';
 
@@ -15,8 +18,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool obscureText = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,47 +30,12 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               verticalSpace(150),
-              Text(
-                "Welcome Back!",
-                style: FontHelper.font28SemiBoldWhite,
-              ),
-              verticalSpace(20),
-              Text(
-                "Email",
-                style: FontHelper.font18BoldWhite,
-              ),
-              verticalSpace(10),
-              const MyTextFormField(
-                hintText: "Enter your email",
-              ),
-              verticalSpace(20),
-              Text(
-                "Password",
-                style: FontHelper.font18BoldWhite,
-              ),
-              verticalSpace(10),
-              MyTextFormField(
-                hintText: "Enter your password",
-                suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        obscureText = !obscureText;
-                      });
-                    },
-                    icon: Icon(
-                        obscureText ? Icons.visibility_off : Icons.visibility)),
-                obscureText: obscureText,
-              ),
-              verticalSpace(20),
-              Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    "Forgot Password?",
-                    style: FontHelper.font18BoldWhite,
-                  )),
+              EmailAndPassword(),
               verticalSpace(20),
               MyButton(
-                onPressed: () {},
+                onPressed: () {
+                  validateThenLogin();
+                },
                 gradient: const LinearGradient(
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
@@ -80,11 +46,18 @@ class _LoginScreenState extends State<LoginScreen> {
               verticalSpace(20),
               TermsAndContinuing(),
               verticalSpace(20),
-              DontHaveAnAccount()
+              DontHaveAnAccount(),
+              BuildBlocListener(),
             ],
           ),
         ),
       )),
     );
+  }
+
+  validateThenLogin() {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().login();
+    }
   }
 }

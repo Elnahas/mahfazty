@@ -27,6 +27,8 @@ class MyButton extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
+            borderRadius: const BorderRadius.all(Radius.circular(30)),
+
             onTap: onPressed,
             child: Center(
               child: child,
