@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "743125666752",
+    "project_id": "mahfazty-7b0f7",
+    "storage_bucket": "mahfazty-7b0f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743125666752:android:bc892dc9f37631c3121625",
+        "android_client_info": {
+          "package_name": "com.example.mahfazty"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtMbvzJMq89ehzU0PAhduWBl2SQ1CxgIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
