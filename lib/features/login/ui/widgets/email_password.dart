@@ -51,6 +51,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             if (value == null || value.isEmpty) {
               return "Please enter your email";
             }
+            return null;
           },
         ),
         verticalSpace(20),
@@ -64,6 +65,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             if (value == null || value.isEmpty) {
               return "Please enter your password";
             }
+            return null;
           },
           hintText: "Enter your password",
           controller: passwordController,

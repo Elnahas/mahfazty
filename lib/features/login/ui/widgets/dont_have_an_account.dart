@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:mahfazty/core/routing/routes.dart';
 import 'package:mahfazty/core/theming/fonts.dart';
 
 class DontHaveAnAccount extends StatelessWidget {
@@ -18,7 +19,9 @@ class DontHaveAnAccount extends StatelessWidget {
             TextSpan(
                 text: "Sign up",
                 style: FontHelper.font14BlueW300,
-                recognizer: TapGestureRecognizer()..onTap = () {})
+                recognizer: TapGestureRecognizer()..onTap = () {
+                  Navigator.pushNamed(context, Routes.signup);
+                })
           ],
         ),
       ),
