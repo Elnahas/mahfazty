@@ -58,6 +58,7 @@ late TextEditingController rePasswordController;
               if (value == null || value.isEmpty) {
                 return "Please enter your name";
               }
+              return null;
             },
           ),
           verticalSpace(20),
@@ -73,6 +74,7 @@ late TextEditingController rePasswordController;
               if (value == null || value.isEmpty) {
                 return "Please enter your email";
               }
+              return null;
             },
           ),
           verticalSpace(20),
@@ -89,6 +91,7 @@ late TextEditingController rePasswordController;
               if(value == null || value.isEmpty){
                 return "Please enter your password";
               }
+              return null;
             },
             suffixIcon: IconButton(
                 onPressed: () {
@@ -116,6 +119,7 @@ late TextEditingController rePasswordController;
                 } else if(value != passwordController.text){
                   return "Password doesn't match";
                 }
+                return null;
               },
               suffixIcon: IconButton(
                 onPressed: () {

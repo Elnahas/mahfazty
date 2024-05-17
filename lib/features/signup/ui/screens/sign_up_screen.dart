@@ -16,6 +16,12 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        leading: IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, icon: Icon(Icons.arrow_back_ios) , color: Colors.white,),
+      ),
       backgroundColor: ColorsApp.blackColor,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -24,7 +30,7 @@ class SignUpScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                verticalSpace(150),
+                verticalSpace(70),
                 const SignUpForm(),
                 verticalSpace(20),
                 Align(
