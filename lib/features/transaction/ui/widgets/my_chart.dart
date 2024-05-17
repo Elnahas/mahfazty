@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:mahfazty/core/theming/fonts.dart';
 
 class MyChart extends StatefulWidget {
   MyChart({super.key});
@@ -11,7 +12,7 @@ class MyChart extends StatefulWidget {
 }
 
 class MyChartState extends State<MyChart> {
-  final double width = 7;
+  final double width =12;
 
   late List<BarChartGroupData> rawBarGroups;
   late List<BarChartGroupData> showingBarGroups;
@@ -52,25 +53,19 @@ class MyChartState extends State<MyChart> {
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
+          children: [
             Row(
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                makeTransactionsIcon(),
-                const SizedBox(
-                  width: 38,
-                ),
-                const Text(
+              children: [
+             
+                 Text(
                   'Transactions',
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  style: FontHelper.font28SemiBoldWhite,
                 ),
                 const SizedBox(
                   width: 4,
                 ),
-                const Text(
-                  'state',
-                  style: TextStyle(color: Color(0xff77839a), fontSize: 16),
-                ),
+              
               ],
             ),
             const SizedBox(
