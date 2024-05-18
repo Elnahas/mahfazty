@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mahfazty/core/routing/routes.dart';
 import 'package:mahfazty/features/signup/logic/cubit/signup_cubit.dart';
 
 class BuildBlocListenerSignUp extends StatelessWidget {
@@ -16,8 +17,9 @@ class BuildBlocListenerSignUp extends StatelessWidget {
       listener: (context, state) {
         if (state is SignupSuccessState) {
           Navigator.of(context).pop();
+          Navigator.pushReplacementNamed(context, Routes.home);
         } else if (state is SignupFailureState) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             content: Text("Signup Failed"),
             backgroundColor: Colors.red,
           ));

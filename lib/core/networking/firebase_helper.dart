@@ -12,4 +12,12 @@ class FirebaseHelper {
     await auth.createUserWithEmailAndPassword(email: email, password: password);
   }
 
+  Future signOut() async {
+    await auth.signOut();
+  }
+
+  User? getCurrentUser() {
+    return auth.currentUser;
+  }
+
 }

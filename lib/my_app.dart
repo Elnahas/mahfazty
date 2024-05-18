@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mahfazty/features/login/ui/screens/login_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'core/routing/routes.dart';
+import 'package:mahfazty/home_or_login.dart';
 import 'core/routing/routing.dart';
 
 class MyApp extends StatelessWidget {
@@ -15,7 +13,8 @@ class MyApp extends StatelessWidget {
           designSize: Size(390, 844),
           minTextAdapt: true,
           child: MaterialApp(
-            initialRoute: Routes.login,
+            // initialRoute: Routes.login,
+            home: const HomeOrLogin(),
             onGenerateRoute: routing.generateRoute,
             debugShowCheckedModeBanner: false,
                 title: 'Mahfazty',
