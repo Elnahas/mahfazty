@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mahfazty/features/home/ui/widgets/balance_widget.dart';
-import 'package:mahfazty/features/home/ui/widgets/latest_transactions_section.dart';
+import 'package:mahfazty/features/home/ui/widgets/transactions_section.dart';
 import 'package:mahfazty/features/home/ui/widgets/my_app_bar.dart';
 import 'package:mahfazty/features/home/ui/widgets/top_transactions_section.dart';
 
@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
                 verticalSpace(20),
                 const TopTransactionsSection(),
                 verticalSpace(20),
-                const LatestTransactionsSection(),
+                const TransactionsSection(),
          
               ],
             ),

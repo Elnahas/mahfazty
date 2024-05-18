@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../theming/app_colors.dart';
+
 class MyButton extends StatelessWidget {
   final Widget child;
   final Gradient gradient;
@@ -10,7 +12,11 @@ class MyButton extends StatelessWidget {
   const MyButton({
     super.key,
     required this.child,
-    required this.gradient,
+    this.gradient = const LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        stops: [0.0, 1.0],
+        colors: [ColorsApp.orangeColor, ColorsApp.yellowColor]),
     this.width = double.infinity,
     this.height = 50.0,
     required this.onPressed,
@@ -28,7 +34,6 @@ class MyButton extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
             borderRadius: const BorderRadius.all(Radius.circular(30)),
-
             onTap: onPressed,
             child: Center(
               child: child,

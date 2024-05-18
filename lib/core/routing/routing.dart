@@ -6,6 +6,7 @@ import 'package:mahfazty/core/routing/routes.dart';
 import 'package:mahfazty/features/home/ui/screens/home_screen.dart';
 import 'package:mahfazty/features/signup/logic/cubit/signup_cubit.dart';
 import 'package:mahfazty/features/signup/ui/screens/sign_up_screen.dart';
+import 'package:mahfazty/features/transaction/ui/screens/add_transactions_screen.dart';
 
 import '../../features/login/logic/cubit/login_cubit.dart';
 import '../../features/login/ui/screens/login_screen.dart';
@@ -29,6 +30,10 @@ class Routing {
             create: (context) => SignupCubit(FirebaseHelper()),
             child: SignUpScreen(),
           ),
+        );
+              case Routes.addTransaction:
+        return MaterialPageRoute(
+          builder: (context) => AddTransactionsScreen(),
         );
       default:
         return MaterialPageRoute(builder: (context) => NoRouteScreen());

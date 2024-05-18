@@ -42,11 +42,6 @@ class SignUpScreen extends StatelessWidget {
                     )),
                 verticalSpace(20),
                 MyButton(
-                    gradient: const LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        stops: [0.0, 1.0],
-                        colors: [ColorsApp.orangeColor, ColorsApp.yellowColor]),
                     onPressed: () {
                       if(context.read<SignupCubit>().formKey.currentState!.validate()){
                         context.read<SignupCubit>().signup();
