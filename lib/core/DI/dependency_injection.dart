@@ -7,7 +7,6 @@ import 'package:mahfazty/features/transaction/logic/cubit/transaction_cubit.dart
 final getIt = GetIt.instance;
 
 void setupGetIt() {
-  var firebase_helper = FirebaseHelper();
 
   getIt.registerSingleton<FirebaseHelper>(FirebaseHelper());
   getIt.registerSingleton<LoginCubit>(LoginCubit());

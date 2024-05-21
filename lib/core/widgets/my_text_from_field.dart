@@ -6,6 +6,7 @@ class MyTextFormField extends StatelessWidget {
   final String hintText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
+  final Color? fillColor;
   final bool obscureText;
   final bool readOnly;
   final TextEditingController? controller;
@@ -18,7 +19,11 @@ class MyTextFormField extends StatelessWidget {
       this.suffixIcon,
       this.obscureText = false,
       this.controller,
-      this.validator, this.prefixIcon,  this.readOnly = false, this.onTap});
+      this.validator,
+      this.prefixIcon,
+      this.readOnly = false,
+      this.onTap,
+      this.fillColor = ColorsApp.greyColor});
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +35,13 @@ class MyTextFormField extends StatelessWidget {
       style: FontHelper.font18GreyW300,
       obscureText: obscureText,
       decoration: InputDecoration(
+          isDense: true,
           suffixIcon: suffixIcon,
-          prefixIcon:prefixIcon ,
+          prefixIcon: prefixIcon,
           hintText: hintText,
           hintStyle: FontHelper.font18GreyW300,
           filled: true,
-          fillColor: ColorsApp.greyColor,
+          fillColor: fillColor,
           focusColor: Colors.white,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),
